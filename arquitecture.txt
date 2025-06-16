@@ -1,0 +1,17 @@
+urh-api/
+├── personal/
+│   ├── models.py         # SQLModel
+│   ├── schemas.py        # Pydantic
+│   ├── repository.py     # Consultas a BD
+│   ├── service.py        # Reglas de negocio
+│   └── routes.py         # Endpoints FastAPI
+├── vinculos/
+│   ├── models.py
+│   ├── schemas.py
+│   ├── repository.py
+│   ├── service.py
+│   └── routes.py
+├── core/
+│   ├── config.py
+│   └── database.py       # engine, get_session
+├── main.py

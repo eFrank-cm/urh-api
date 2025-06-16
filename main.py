@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Depends
 from sqlmodel import Session, select
-from db.connection import get_session
-from personal.models.persona import Persona
-from personal.models.vinculo import Vinculo
+from .core.connection import get_session
+from .personal.personas.models import Persona
+from .personal.vinculos.models import Vinculo
 
 app = FastAPI()
 
