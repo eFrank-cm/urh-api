@@ -12,9 +12,8 @@ class Vinculo(SQLModel, table=True):
     dni: str
     categoria: str
     regimen_laboral: str = Field(sa_column=Column("regimenlaboral", String))
-    remuneracion: int
+    remuneracion: float
     area: str
-    funcion: str
     documento: str
     puesto_empleo: str = Field(sa_column=Column("puestoempleo", String))
     tipo_empleado: str = Field(sa_column=Column("tipoempleado", String))
@@ -33,9 +32,13 @@ class Vinculo(SQLModel, table=True):
     estado: bool
     observacion: str
 
-    # CLAVES FORANEAS
+    # -------------------------------- RELACIONES Y CLAVES FORANEAS --------------------------------
     dependencia: Optional[str] = Field(default=None, foreign_key="General.tbDependencia.dependencia")
     dependencia_rel: List["Dependencia"] = Relationship(back_populates="vinculos_rel") # type: ignore
+    
+    funcion: Optional[str] = Field(default=None, foreign_key="Empleo.tbFuncion.funcion")
+    funcion_rel: List["Funcion"] = Relationship(back_populates="vinculos_rel") # type: ignore
+
 
 
 
