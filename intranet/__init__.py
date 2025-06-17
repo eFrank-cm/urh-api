@@ -6,4 +6,4 @@ Usuario.model_rebuild()
 
 router = APIRouter()
 
-router.include_router(router_usuarios, tags=["Usuarios"])
+router.include_router(router_usuarios)
