@@ -9,7 +9,7 @@ connection_url = URL.create(
     password=settings.DB_PASSWORD,
     host=settings.DB_HOST,
     database=settings.DB_NAME,
-    query={"driver": settings.DB_DRIVER}
+    query={"driver": str(settings.DB_DRIVER)}
 )
 
 # Crear engine global reutilizable
