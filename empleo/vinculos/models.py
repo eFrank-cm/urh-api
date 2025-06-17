@@ -1,5 +1,5 @@
 from sqlmodel import SQLModel, Field, Relationship
-from typing import Optional, List
+from typing import List, Optional
 from sqlalchemy import Column, String, Boolean, DateTime
 from datetime import datetime
 
@@ -27,7 +27,7 @@ class Vinculo(SQLModel, table=True):
     proceso_ingreso: str = Field(sa_column=Column("procesoingreso", String))
     condicion: str
     usuario: str
-    usuario_modificacion: datetime = Field(sa_column=Column("usuariomodificacion", DateTime))
+    usuario_modificacion: str = Field(sa_column=Column("usuariomodificacion", String))
     
     estado: bool
     observacion: str
@@ -38,7 +38,10 @@ class Vinculo(SQLModel, table=True):
     
     funcion: Optional[str] = Field(default=None, foreign_key="Empleo.tbFuncion.funcion")
     funcion_rel: List["Funcion"] = Relationship(back_populates="vinculos_rel") # type: ignore
-
+    
+    dni: str = Field(default=None, foreign_key="General.tbPersona.dni")
+    dni_rel: List["Persona"] = Relationship(back_populates="vinculos_rel") # type: ignore
+    
 
 
 

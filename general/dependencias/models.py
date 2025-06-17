@@ -25,5 +25,5 @@ class Dependencia(SQLModel, table=True):
     estado: bool
     
     # -------------------------------- RELACIONES Y CLAVES FORANEAS --------------------------------
-    vinculos_rel: List["Vinculo"] = Relationship(back_populates="dependencia_rel") # type: ignore
+    vinculos_rel: List["Vinculo"] = Relationship(back_populates="dependencia_rel") # type:ignore
     

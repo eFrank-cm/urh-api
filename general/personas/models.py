@@ -1,5 +1,6 @@
-from sqlmodel import SQLModel, Field
+from sqlmodel import SQLModel, Field, Relationship
 from sqlalchemy import Column, String
+from typing import List
 
 class Persona(SQLModel, table=True):
     __tablename__ = "tbPersona"
@@ -19,8 +20,15 @@ class Persona(SQLModel, table=True):
     # datos complementarios
     ubigeo: str
     tipodocumentoidentidad: str
-    usuario: str
     estado: bool
     fecha: str
     fechadefuncion: str
     ubigeonac: str
+    usuario: str
+    
+    # -------------------------------- RELACIONES Y CLAVES FORANEAS --------------------------------
+    vinculos_rel: List["Vinculo"] = Relationship(back_populates="dni_rel") # type: ignore
+    
+    usuarios_rel: List["Usuario"] = Relationship(back_populates="persona_rel") # type: ignore
+    
+    
