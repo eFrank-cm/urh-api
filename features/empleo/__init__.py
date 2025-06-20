@@ -1,9 +1,8 @@
 from fastapi import APIRouter
-from empleo.vinculos.models import Vinculo
-from empleo.vinculos.routes import router as router_vinculos
+from .vinculos.models import Vinculo
+from .vinculos.routes import router as router_vinculos
 
 Vinculo.model_rebuild()
-
 
 router = APIRouter()
 

@@ -1,6 +1,7 @@
 from sqlmodel import SQLModel, Field, Relationship
 from sqlalchemy import Column, String
 from typing import List
+from datetime import datetime
 
 class Persona(SQLModel, table=True):
     __tablename__ = "tbPersona"
@@ -21,7 +22,7 @@ class Persona(SQLModel, table=True):
     ubigeo: str
     tipodocumentoidentidad: str
     estado: bool
-    fecha: str
+    fecha: datetime
     fechadefuncion: str
     ubigeonac: str
     usuario: str

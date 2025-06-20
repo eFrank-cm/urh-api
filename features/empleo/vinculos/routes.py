@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlmodel import Session, select
 from core.connection import get_session
-from empleo.vinculos.models import Vinculo
+from .models import Vinculo
 
 router = APIRouter()
 

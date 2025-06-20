@@ -1,6 +1,6 @@
 from sqlmodel import SQLModel, Field, Relationship
 from typing import Optional
-from sqlalchemy import Column, String, Boolean, DateTime
+from sqlalchemy import Column, String, DateTime
 from datetime import datetime
 
 class Usuario(SQLModel, table=True):

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlmodel import Session, select
 from core.connection import get_session
-from general.personas.models import Persona
+from .models import Persona
 
 router = APIRouter()
 
