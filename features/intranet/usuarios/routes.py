@@ -13,7 +13,7 @@ def get_usuarios(limit:int = 10, session: Session = Depends(get_session)):
     usuarios = session.exec(select(Usuario).limit(limit)).all()
     return {"length": len(usuarios), "data": usuarios}
 
-@router.post("/usuario", summary="Validar usuario")
+@router.post("/auth", summary="Validar usuario")
 def get_person_by_dni(body: LoginRequest, session: Session = Depends(get_session)):
     hashed_pass = hashlib.md5(body.password.encode()).hexdigest()
     usuario = session.exec(select(Usuario).where((Usuario.dni == body.username) & (Usuario.password == hashed_pass))).first()

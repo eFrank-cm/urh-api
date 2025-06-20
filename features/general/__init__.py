@@ -10,4 +10,4 @@ Persona.model_rebuild()
 
 router = APIRouter()
 
-router.include_router(router_persona)
+router.include_router(router_persona, prefix="/persona")

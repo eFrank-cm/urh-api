@@ -6,6 +6,6 @@ Vinculo.model_rebuild()
 
 router = APIRouter()
 
-router.include_router(router_vinculos)
+router.include_router(router_vinculos, prefix="/vinculos")
 
 

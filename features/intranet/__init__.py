@@ -1,9 +1,9 @@
 from fastapi import APIRouter
-from .usuario.models import Usuario
-from .usuario.routes import router as router_usuarios
+from .usuarios.models import Usuario
+from .usuarios.routes import router as router_usuarios
 
 Usuario.model_rebuild()
 
 router = APIRouter()
 
-router.include_router(router_usuarios)
+router.include_router(router_usuarios, prefix="/usuarios")  
