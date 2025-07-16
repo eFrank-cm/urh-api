@@ -15,4 +15,5 @@ class Funcion(SQLModel, table=True):
     
     # -------------------------------- RELACIONES Y CLAVES FORANEAS --------------------------------
     vinculos_rel: List["Vinculo"] = Relationship(back_populates="funcion_rel") # type: ignore
+    movimientos_rel: List["Movimiento"] = Relationship(back_populates="funcion_rel") #type: ignore
     
